@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>重庆然晓科技有限公司，是一家主要从事智能化营销工具、大数据工具、雾存储的互联网+物联网技术研发驱动型企业</title>
+    <meta name="description"
+          content="重庆然晓科技有限公司，是一家主要从事智能化营销工具、大数据工具、雾存储的互联网+物联网技术研发驱动型企业，旗下拥有：工蜂小智-智能营销助手、工蜂数据-基于雾计算+AI的大数据系统、工蜂存储-基于BT+区块链的雾存储系统等，致力于互联网营销工具和物联网网络及存储技术的研究开发和推广"/>
+    <meta name="keywords" content="智能,省钱,省心,机器人代替人工,自动加好友,自动加群,自动加关注,批量群发消息,发帖,跟帖,顶帖,全自动化效率提升1000%"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="author" content="重庆然晓科技有限公司"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <!--360默认急速模式打开-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="full-screen" content="yes">
+    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/static/css/base.css"/>
+</head>
+<body>
+<div id="hd">
+    <div class="wp">
+        <div class="logo">
+            <a href="/"><img src="/static/img/logo.png" alt="重庆然晓科技有限公司"></a>
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="/" title="首页"><span>首页</span></a></li>
+                <li class="hover"><a href="/page/about/contact.html" title="关于我们">关于我们</a></li>
+
+            </ul>
+        </div>
+        <div class="tel">023-66224924<span>08:00～23:30</span></div>
+    </div>
+</div>
+
+<div id="bd"></div>
+<div class="about-div">
+    <h2 class="tit-b">
+        关于我们
+    </h2>
+    <h4 class="tit-m">关于然晓</h4>
+    <p>
+        重庆然晓科技有限公司，是一家主要从事智能化营销工具、大数据工具、雾存储的互联网+物联网技术研发驱动型企业，旗下拥有：工蜂小智-智能营销助手、工蜂数据-基于雾计算+AI的大数据系统、工蜂存储-基于BT+区块链的雾存储系统等，致力于互联网营销工具和物联网网络及存储技术的研究开发和推广。
+    </p>
+    <h4 class="tit-m">公司地址</h4>
+    <p>重庆市巴南区山顶路8号</p>
+
+    <p>电话/Tel: 023-66224924</p>
+    <div class="map">
+        <div id="map"></div>
+    </div><!--加载百度 map api-->
+
+
+</div>
+<!-- end #bd -->
+<div style="margin-bottom: 30px;height: 1px;"></div>
+<!-- begin #fd -->
+
+<div id="fd" class="index-fd pr">
+    <h1>联系我们</h1>
+    <div class="wp">
+        <div class="fd-top">
+            <div class="fd-item">
+                <dl>
+                    <dt><img src="/static/img/wechat/ds-wechat.jpg" style="width:100px;height:100px;"/></dt>
+                </dl>
+                <dl class="dll">
+                    <dt>售前：曾老师</dt>
+                    <dt>微信：扫一扫左侧</dt>
+                    <dt>Q Q：扫一扫右侧</dt>
+                </dl>
+                <dl>
+                    <dt><img src="/static/img/wechat/ds-qq.jpg"/></dt>
+                </dl>
+            </div>
+            <div class="fd-line"></div>
+            <div class="fd-item">
+                <dl>
+                    <dt><img src="/static/img/wechat/dht-wechat.jpg"/></dt>
+                </dl>
+                <dl class="dllrl">
+                    <dt>售后：大糊涂</dt>
+                    <dt>微信：扫一扫左侧</dt>
+                    <dt>Q Q：扫一扫右侧</dt>
+                </dl>
+                <dl>
+                    <dt><img src="/static/img/wechat/dht-qq.jpg"/></dt>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <p>Copyright © 2015-2017 All Rights Reserved 重庆然晓科技有限公司 版权所有</p>
+    <p>渝ICP备14004689号-1</p>
+</div>
+<div id="companyInfo" style="display: none;">
+    <div class="mapCompany">
+        <h1>重庆然晓科技有限公司</h1>
+        <p>公司地址：重庆市巴南区山顶路8号</p>
+        <p>电话/Tel: 023-66224924</p>
+    </div>
+</div>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=153UG6MyedsQlqVFAuQvQkd0lPIVa4Kw"></script>
+<script src="/static/js/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    //在百度 map中显示地址
+    var map = new BMap.Map("map");          // 创建地图实例
+    function map_init() {
+        changeMapStyle('grayscale')
+        var point = new BMap.Point(106.556483, 29.462923);  // 创建点坐标
+        map.centerAndZoom(point, 17);// 初始化地图，设置中心点坐标和地图级别
+
+
+        //向地图中添加缩放控件
+        var ctrlNav = new window.BMap.NavigationControl({
+            anchor: BMAP_ANCHOR_TOP_LEFT,
+            type: BMAP_NAVIGATION_CONTROL_LARGE
+        });
+        map.addControl(ctrlNav);
+
+        //向地图中添加缩略图控件
+        var ctrlOve = new window.BMap.OverviewMapControl({
+            anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+            isOpen: 1
+        });
+        map.addControl(ctrlOve);
+
+        //向地图中添加比例尺控件
+        var ctrlSca = new window.BMap.ScaleControl({
+            anchor: BMAP_ANCHOR_BOTTOM_LEFT
+        });
+        map.addControl(ctrlSca);
+
+        var myIcon = new BMap.Icon("/static/img/icon/label.png", new BMap.Size(30, 30));
+        var marker = new BMap.Marker(point, {icon: myIcon});
+
+        var infoWindow = new BMap.InfoWindow($("#companyInfo").html());  // 创建信息窗口对象
+        map.openInfoWindow(infoWindow, point); //开启信息窗口
+        marker.addEventListener("click", function () {
+            map.openInfoWindow(infoWindow, point); //开启信息窗口
+        });
+
+        map.addOverlay(marker);
+    }
+
+    function changeMapStyle(style) {
+        map.setMapStyle({style: style});
+    }
+
+    //异步调用百度js
+    function map_load() {
+        map_init()
+        $("#map").css("min-height", "600px");
+    }
+
+    window.onload = map_load;
+</script>
+</body>
+</html>
