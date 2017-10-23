@@ -10,6 +10,7 @@ sitedetail.txt
 siteDoMain.txt
 siteOld.txt
 debug
+www
 
 # Test binary, build with `go test -c`
 *.test
