@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工蜂小智App官方下载，重庆然晓科技有限公司，是一家主要从事智能化营销工具、大数据工具、雾存储的互联网+物联网技术研发驱动型企业</title>
+    <meta name="description"
+          content="重庆然晓科技有限公司，是一家主要从事智能化营销工具、大数据工具、雾存储的互联网+物联网技术研发驱动型企业，旗下拥有：工蜂小智-智能营销助手、工蜂数据-基于雾计算+AI的大数据系统、工蜂存储-基于BT+区块链的雾存储系统等，致力于互联网营销工具和物联网网络及存储技术的研究开发和推广"/>
+    <meta name="keywords" content="智能,省钱,省心,机器人代替人工,自动加好友,自动加群,自动加关注,批量群发消息,发帖,跟帖,顶帖,全自动化效率提升1000%"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="author" content="重庆然晓科技有限公司"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <!--360默认急速模式打开-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta name="full-screen" content="yes">
+    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/download.css">
+</head>
+<body class="pc-contanier">
+
+<div class="pc-wrap"></div>
+<div class="pc-bg pc-bg1 current" style="display: none;"></div>
+<div class="pc-bg pc-bg2" style="display: block;"></div>
+<div class="pc-bg pc-bg3" style="display: none;"></div>
+<div class="pc-bg pc-bg4" style="display: none;"></div>
+<div class="page-bg-btm"></div>
+<div id="particles-js">
+    <canvas style="width: 100%; height: 100%;" width="1085" height="1014"></canvas>
+    <canvas style="width: 100%; height: 100%;"></canvas></div>
+<div class="pc-body">
+    <div class="clearfix">
+        <div class="pc-body-item">
+            <div class="pc-pics-box img-box">
+                <img src="/static/img/pic4.png" width="520" height="580" class="item" style="display: block;">
+            </div>
+        </div>
+        <div class="pc-body-item">
+            <div class="pc-main">
+                <div class="pc-logo ico">
+                    <img class="logo" src="/static/img/logo2.png">
+                    <span class="appname">工蜂小智</span>
+                    <span class="version">V1.0.1</span>
+                </div>
+                <div class="pc-btns">
+                    <a href="http://update.9ee3.com/download?app=spread-app" class="btn">
+                        <span class="ico ico-android"></span>
+                        <span class="txt">安卓版</span>
+                    </a>
+                </div>
+                <div class="pc-erwei">
+                    <p>手机扫描二维码直接下载</p>
+                    <div class="img-box">
+                        <img src="/static/img/app_down_qrcode.png" width="180" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- pc-body  end -->
+<div class="pc-bg-flag slider-flags">
+    <span class="item"></span>
+    <span class="item current"></span>
+    <span class="item"></span>
+    <span class="item"></span>
+</div><!-- pc-bg-flag  end -->
+<div class="pc-copyright">Copyright © 2015-2017 All Rights Reserved 重庆然晓科技有限公司 版权所有</div><!-- pc-bg-flag  end -->
+<a href="javascript:void(0);" class="slider-prev"></a>
+<a href="javascript:void(0);" class="slider-next"></a>
+<script type="text/javascript" src="http://app.2ya.com.cn/material/theme/js/jquery-1.8.0.min.js?time=20150409"></script>
+<script type="text/javascript">
+    $(function(){
+        var mainContent = $(".pc-body"),
+                pcBgs = $(".pc-bg"),
+                mainImgs = $(".pc-pics-box").find(".item"),
+                controlItems = $(".pc-bg-flag").find(".item"),
+                btnPrev = $(".slider-prev"),
+                btnNext = $(".slider-next"),
+                actionIndex = 0,
+                interval = 3000,
+                timer = 0;
+
+        var fadeAction = function(index){
+            controlItems.eq(index).addClass("current").siblings().removeClass("current");
+            mainImgs.eq(index).fadeIn("slow").siblings(".item").fadeOut("slow");
+            pcBgs.eq(index).fadeIn("slow").siblings(".pc-bg").fadeOut("slow");
+        };
+
+        var autoPlay = function(){
+            if (actionIndex < pcBgs.length) {
+                actionIndex = (actionIndex+1) % pcBgs.length;
+                fadeAction(actionIndex);
+            }
+        };
+        timer = setInterval(autoPlay, interval);
+
+        controlItems.click(function(){
+            actionIndex = $(this).index();
+            fadeAction(actionIndex);
+        });
+
+        btnPrev.click(function(){
+            if (actionIndex >= 0 ) {
+                if (actionIndex == 0) actionIndex = pcBgs.length;
+                actionIndex = (actionIndex-1) % pcBgs.length;
+                fadeAction(actionIndex);
+            }
+        }).hover(function(evt){
+            clearInterval(timer);
+        },function(evt){
+            timer = setInterval(autoPlay,interval);
+        });
+
+        btnNext.click(function(){
+            autoPlay();
+        }).hover(function(evt){
+            clearInterval(timer);
+        },function(evt){
+            timer = setInterval(autoPlay,interval);
+        });
+
+        mainContent.hover(function(evt){
+            clearInterval(timer);
+        },function(evt){
+            timer = setInterval(autoPlay,interval);
+        });
+    });
+</script>
+<script src="http://app.2ya.com.cn/material/theme//js/part1.js"></script>
+<script src="http://app.2ya.com.cn/material/theme//js/part2.js"></script>
+</body>
+</html>
