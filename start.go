@@ -20,6 +20,7 @@ func main() {
 	e.Static("/static", "static")
 
 	e.File("/", "page/index.html")
+	//微信域名验证码
 	e.File("MP_verify_3Z6AKFClzM8nQt3q.txt", "page/MP_verify_3Z6AKFClzM8nQt3q.txt")
 
 	//utils.Open("http://127.0.0.1:8080")
