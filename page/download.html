@@ -29,12 +29,13 @@
     <canvas style="width: 100%; height: 100%;"></canvas></div>
 <div class="pc-body">
     <div class="clearfix">
-        <div class="pc-body-item">
+        <div class="pc-body-item w-60">
             <div class="pc-pics-box img-box">
-                <img src="/static/img/pic4.png" width="520" height="580" class="item" style="display: block;">
+                <img src="/static/img/demo/pc-home.png"  class="item" style="height: 360px;width:600px;margin-top: 100px;display: block;">
+                <img src="/static/img/pic4.png" width="520" height="580" class="item">
             </div>
         </div>
-        <div class="pc-body-item">
+        <div class="pc-body-item w-40">
             <div class="pc-main">
                 <div class="pc-logo ico">
                     <img class="logo" src="/static/img/logo2.png">
@@ -42,13 +43,17 @@
                     <span class="version">V1.0.1</span>
                 </div>
                 <div class="pc-btns">
-                    <a href="http://update.9ee3.com/download?app=spread-app" class="btn">
+                    <a href="http://update.9ee3.com/download?app=spread-install" id="down-pc" target="_blank" class="btn">
+                        <span class="ico ico-pc"></span>
+                        <span class="txt">电脑版</span>
+                    </a>
+                    <a href="http://update.9ee3.com/download?app=spread-app" id="down-android" target="_blank" class="btn">
                         <span class="ico ico-android"></span>
                         <span class="txt">安卓版</span>
                     </a>
                 </div>
                 <div class="pc-erwei">
-                    <p>手机扫描二维码直接下载</p>
+                    <p>安卓版：手机扫描二维码直接下载</p>
                     <div class="img-box">
                         <img src="/static/img/app_down_qrcode.png" width="180" >
                     </div>
@@ -66,7 +71,10 @@
 <div class="pc-copyright">Copyright © 2015-2017 All Rights Reserved 重庆然晓科技有限公司 版权所有</div><!-- pc-bg-flag  end -->
 <a href="javascript:void(0);" class="slider-prev"></a>
 <a href="javascript:void(0);" class="slider-next"></a>
-<script type="text/javascript" src="http://app.2ya.com.cn/material/theme/js/jquery-1.8.0.min.js?time=20150409"></script>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script src="/static/js/download.js?v=20171129"></script>
+<script src="http://app.2ya.com.cn/material/theme//js/part1.js"></script>
+<script src="http://app.2ya.com.cn/material/theme//js/part2.js"></script>
 <script type="text/javascript">
     $(function(){
         var mainContent = $(".pc-body"),
@@ -125,7 +133,5 @@
         });
     });
 </script>
-<script src="http://app.2ya.com.cn/material/theme//js/part1.js"></script>
-<script src="http://app.2ya.com.cn/material/theme//js/part2.js"></script>
 </body>
 </html>
