@@ -227,7 +227,6 @@ a:hover {
 }
 
 #hd .tel {
-    background: url(/static/img/tel_bg.png) left center no-repeat;
     background-size: 50px;
     line-height: 70px;
     float: right;
