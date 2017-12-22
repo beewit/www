@@ -235,6 +235,7 @@ a:hover {
 }
 
 #hd .logo {
+    width: 150px;
     float: left;
     margin-right: 60px;
     height: 70px;
@@ -961,6 +962,10 @@ a:hover {
     filter: alpha(opacity=0);
     opacity: 100 \9;
     filter: alpha(opacity=100) \9;
+}
+
+.ul-about {
+    min-width: 100%;
 }
 
 .ul-about .li1 {
