@@ -1,5 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="pragma" content="no-cache">
@@ -23,12 +24,14 @@
 <div class="page-bg-btm"></div>
 <div id="particles-js">
     <canvas style="width: 100%; height: 100%;" width="1085" height="1014"></canvas>
-    <canvas style="width: 100%; height: 100%;"></canvas></div>
+    <canvas style="width: 100%; height: 100%;"></canvas>
+</div>
 <div class="pc-body">
     <div class="clearfix">
         <div class="pc-body-item w-60">
             <div class="pc-pics-box img-box">
-                <img src="/static/img/demo/pc-home.png"  class="item" style="height: 360px;width:600px;margin-top: 100px;display: block;">
+                <img src="/static/img/demo/pc-home.png" class="item"
+                     style="height: 360px;width:600px;margin-top: 100px;display: block;">
                 <img src="/static/img/pic4.png" width="520" height="580" class="item">
             </div>
         </div>
@@ -40,11 +43,13 @@
                     <span class="version">V1.0.1</span>
                 </div>
                 <div class="pc-btns">
-                    <a href="http://update.9ee3.com/download?app=spread-install" id="down-pc" target="_blank" class="btn">
+                    <a href="http://update.9ee3.com/download?app=spread-install" id="down-pc" target="_blank"
+                       class="btn">
                         <span class="ico ico-pc"></span>
                         <span class="txt">电脑版</span>
                     </a>
-                    <a href="http://update.9ee3.com/download?app=spread-app" id="down-android" target="_blank" class="btn">
+                    <a href="http://update.9ee3.com/download?app=spread-app" id="down-android" target="_blank"
+                       class="btn">
                         <span class="ico ico-android"></span>
                         <span class="txt">安卓版</span>
                     </a>
@@ -52,9 +57,13 @@
                 <div class="pc-erwei">
                     <p>安卓版：手机扫描二维码直接下载</p>
                     <div class="img-box">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" id="down-android-img" width="170" style="padding: 10px;" >
+                        <img class="logo" src="/static/img/logo2.png"
+                             style="position: absolute;top: 80px;left: 70px;background: #fff;width: 50px;border-radius: 100%;">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             id="down-android-img" width="170" style="padding: 10px;">
                         <!--<img src="/static/img/app_down_qrcode.png" alt="扫码下载工蜂小智APP" width="170" />-->
                     </div>
+                    <p>安卓版：手机扫描二维码直接下载</p>
                 </div>
             </div>
         </div>
@@ -74,7 +83,7 @@
 <script src="http://app.2ya.com.cn/material/theme//js/part1.js"></script>
 <script src="http://app.2ya.com.cn/material/theme//js/part2.js"></script>
 <script type="text/javascript">
-    $(function(){
+    $(function () {
         var mainContent = $(".pc-body"),
                 pcBgs = $(".pc-bg"),
                 mainImgs = $(".pc-pics-box").find(".item"),
@@ -85,55 +94,55 @@
                 interval = 3000,
                 timer = 0;
 
-        var fadeAction = function(index){
+        var fadeAction = function (index) {
             controlItems.eq(index).addClass("current").siblings().removeClass("current");
             mainImgs.eq(index).fadeIn("slow").siblings(".item").fadeOut("slow");
             pcBgs.eq(index).fadeIn("slow").siblings(".pc-bg").fadeOut("slow");
         };
 
-        var autoPlay = function(){
+        var autoPlay = function () {
             if (actionIndex < pcBgs.length) {
-                actionIndex = (actionIndex+1) % pcBgs.length;
+                actionIndex = (actionIndex + 1) % pcBgs.length;
                 fadeAction(actionIndex);
             }
         };
         timer = setInterval(autoPlay, interval);
 
-        controlItems.click(function(){
+        controlItems.click(function () {
             actionIndex = $(this).index();
             fadeAction(actionIndex);
         });
 
-        btnPrev.click(function(){
-            if (actionIndex >= 0 ) {
+        btnPrev.click(function () {
+            if (actionIndex >= 0) {
                 if (actionIndex == 0) actionIndex = pcBgs.length;
-                actionIndex = (actionIndex-1) % pcBgs.length;
+                actionIndex = (actionIndex - 1) % pcBgs.length;
                 fadeAction(actionIndex);
             }
-        }).hover(function(evt){
+        }).hover(function (evt) {
             clearInterval(timer);
-        },function(evt){
-            timer = setInterval(autoPlay,interval);
+        }, function (evt) {
+            timer = setInterval(autoPlay, interval);
         });
 
-        btnNext.click(function(){
+        btnNext.click(function () {
             autoPlay();
-        }).hover(function(evt){
+        }).hover(function (evt) {
             clearInterval(timer);
-        },function(evt){
-            timer = setInterval(autoPlay,interval);
+        }, function (evt) {
+            timer = setInterval(autoPlay, interval);
         });
 
-        mainContent.hover(function(evt){
+        mainContent.hover(function (evt) {
             clearInterval(timer);
-        },function(evt){
-            timer = setInterval(autoPlay,interval);
+        }, function (evt) {
+            timer = setInterval(autoPlay, interval);
         });
     });
 </script>
 <script>
     var _hmt = _hmt || [];
-    (function() {
+    (function () {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?1949ed5493ae0c5bf312a646fa77d8c1";
         var s = document.getElementsByTagName("script")[0];
