@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="帮助中心 - 工蜂引流常见帮助">
+    <title>帮助中心</title>
+    <link rel="stylesheet" href="/static/css/help.css"/>
+</head>
+<body>
+<div class="main">
+    <div class="title">
+        <h3 id="title"></h3>
+    </div>
+    <div class="tool">
+        <p id="time"></p>
+    </div>
+    <p class="content" id="content">
+    </p>
+</div>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script>
+    $(function () {
+        getDetail(GetQueryString("id"));
+    });
+
+    function getDetail(id) {
+        $.ajax({
+            url: "/api/help/get",
+            method: "GET",
+            data: {id: id},
+            success: function (res) {
+                if (res.ret == 200) {
+                    $("#title").html(res.data.title);
+                    $("#time").html(res.data.ct_time);
+                    $("#content").html(res.data.content);
+                } else {
+                    alert("加载失败");
+                }
+            }
+        })
+    }
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+</body>
+</html>

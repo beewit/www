@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="帮助中心 - 工蜂引流常见帮助">
+    <title>帮助中心</title>
+    <link rel="stylesheet" href="/static/css/help.css"/>
+</head>
+<body>
+<div class="main">
+    <div class="type-item">
+        <div class="type-title">
+            <h3>裂变营销</h3>
+        </div>
+        <ul class="list fission-list">
+            <li><a>加载中..</a></li>
+        </ul>
+    </div>
+    <div class="type-item">
+        <div class="type-title">
+            <h3>自动营销</h3>
+        </div>
+        <ul class="list auto-list">
+            <li><a>加载中..</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script>
+    var temp = '<li><a href="detail.html?id={id}">{title}</a></li>';
+    $(function () {
+        getList(".fission-list", "裂变营销");
+        getList(".auto-list", "自动营销");
+    });
+
+    function getList(obj, t) {
+        $.ajax({
+            url: "/api/help/list",
+            method: "GET",
+            data: {t: t},
+            success: function (res) {
+                if (res.ret == 200) {
+                    $(obj).html("");
+                    var data = res.data.Data;
+                    for (var i in data) {
+                        $(obj).append(temp.replace("{id}", data[i].id).replace("{title}", data[i].title));
+                    }
+                }else{
+                    alert("加载失败");
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>
