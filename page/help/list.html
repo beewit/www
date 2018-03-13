@@ -37,7 +37,7 @@
 </div>
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <script>
-    var temp = '<li><a href="detail.html?id={id}">{title}</a></li>';
+    var temp = '<li><a href="{href}">{title}</a></li>';
     $(function () {
         getList(".fission-list", "裂变营销");
         getList(".auto-list", "自动营销");
@@ -53,9 +53,10 @@
                     $(obj).html("");
                     var data = res.data.Data;
                     for (var i in data) {
-                        $(obj).append(temp.replace("{id}", data[i].id).replace("{title}", data[i].title));
+                        $(obj).append(temp.replace("{href}", data[i].href && data[i].href != "" ?
+                                data[i].href : "detail.html?id=" + data[i].id).replace("{title}", data[i].title));
                     }
-                }else{
+                } else {
                     alert("加载失败");
                 }
             }
