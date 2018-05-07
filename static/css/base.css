@@ -1112,11 +1112,11 @@ a:hover {
     color: #ffffff;
     margin-top: 10px;
     display: inline-block;
-    width: 172px;
-    height: 48px;
-    line-height: 48px;
-    font-size: 16px;
-    margin-right: 16px;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    margin-right: 5px;
     border-radius: 30px;
     position: relative;
     overflow: hidden;
@@ -1131,12 +1131,13 @@ a:hover {
 
 .pc-btns .ico {
     float: left;
-    width: 36px;
-    height: 36px;
+    width: 25px;
+    height: 25px;
     background-position: left top;
     background-repeat: no-repeat;
-    margin: 5px 6px 0 32px;
-    background-size: 36px 36px;
+    margin: 8px 3px 0 10px;
+    background-size: 25px 25px;
+
 }
 
 .pc-btns .ico-ios {
@@ -1149,6 +1150,13 @@ a:hover {
 
 .pc-btns .ico-pc {
     background-image: url(/static/img/icon_pc.png);
+}
+.pc-btns .ico-kf {
+    background-image: url(/static/img/kf.png);
+}
+
+.pc-btns .down-pc-kf {
+    width: 145px;
 }
 
 .pc-btns .txt {

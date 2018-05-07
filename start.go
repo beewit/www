@@ -26,6 +26,7 @@ func main() {
 
 	e.File("/", "page/index.html")
 	e.File("8VHBgcXdwx.txt", "8VHBgcXdwx.txt")
+	e.File("root.txt", "root.txt")
 	//微信域名验证码
 	e.File("MP_verify_3Z6AKFClzM8nQt3q.txt", "page/MP_verify_3Z6AKFClzM8nQt3q.txt")
 	e.File("/.well-known/pki-validation/fileauth.txt", "fileauth.txt")

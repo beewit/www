@@ -40,6 +40,10 @@
             data: {id: id},
             success: function (res) {
                 if (res.ret == 200) {
+                    if(res.data.href && res.data.href != ""){
+                        location.href= res.data.href;
+                        return
+                    }
                     $("#title").html(res.data.title);
                     $("#time").html(res.data.ct_time);
                     $("#content").html(res.data.content);
